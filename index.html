@@ -1,0 +1,1909 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TTM Shop — Premium Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --bg-primary: #0b0f1a;
+            --bg-card: #141c2b;
+            --bg-card-hover: #1c2639;
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.3);
+            --accent: #22d3a7;
+            --text-light: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border-color: #1e293b;
+            --bkash-pink: #e2136e;
+            --nagad-orange: #f5a623;
+        }
+        body {
+            background: var(--bg-primary);
+            color: var(--text-light);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            padding-bottom: 80px;
+        }
+        header {
+            background: rgba(11, 15, 26, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .brand .icon {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #fff;
+            box-shadow: 0 6px 18px var(--primary-glow);
+            flex-shrink: 0;
+        }
+        .brand h1 {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            color: #fff;
+        }
+        .brand h1 span {
+            color: #38bdf8;
+        }
+        .brand .sub {
+            font-size: 10px;
+            color: var(--text-muted);
+            display: block;
+            margin-top: -2px;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .header-actions .cart-icon {
+            position: relative;
+            font-size: 22px;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .header-actions .cart-icon:hover {
+            color: var(--accent);
+        }
+        .header-actions .cart-icon .badge {
+            position: absolute;
+            top: -10px;
+            right: -12px;
+            background: var(--primary);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 30px;
+            min-width: 22px;
+            text-align: center;
+        }
+        .header-actions .profile-icon {
+            font-size: 22px;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .header-actions .profile-icon:hover {
+            color: var(--accent);
+        }
+        .search-box {
+            background: #1a2335;
+            border: 1px solid var(--border-color);
+            border-radius: 40px;
+            padding: 8px 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            max-width: 400px;
+            min-width: 160px;
+            transition: 0.3s;
+        }
+        .search-box:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 16px var(--primary-glow);
+        }
+        .search-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            width: 100%;
+            font-size: 14px;
+        }
+        .search-box input::placeholder {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+        .search-box i {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        .hero {
+            max-width: 1400px;
+            margin: 30px auto 20px;
+            padding: 0 20px;
+        }
+        .hero-inner {
+            background: linear-gradient(145deg, #181f33, #0e1422);
+            border: 1px solid var(--border-color);
+            border-radius: 28px;
+            padding: 32px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-inner::after {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.12), transparent 70%);
+            pointer-events: none;
+        }
+        .hero-text h2 {
+            font-size: 34px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .hero-text h2 span {
+            color: #38bdf8;
+        }
+        .hero-text p {
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 8px 0 12px;
+            font-size: 15px;
+        }
+        .hero-badge {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 14px;
+        }
+        .hero-tag {
+            background: rgba(34, 211, 167, 0.12);
+            border: 1px solid rgba(34, 211, 167, 0.2);
+            color: var(--accent);
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-explore-hero {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            padding: 14px 34px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 24px var(--primary-glow);
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .btn-explore-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 32px rgba(99, 102, 241, 0.45);
+        }
+        .category-tabs {
+            max-width: 1400px;
+            margin: 10px auto 20px;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .category-tab {
+            background: #1a2335;
+            border: 1px solid var(--border-color);
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .category-tab.active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+        .category-tab:hover {
+            background: var(--bg-card-hover);
+            color: #fff;
+        }
+        .section-head {
+            max-width: 1400px;
+            margin: 20px auto 16px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .section-head h3 {
+            font-size: 26px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-head h3 i {
+            color: var(--primary);
+        }
+        .count-badge {
+            background: #1a2335;
+            border: 1px solid var(--border-color);
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                padding: 0 12px;
+            }
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.3s cubic-bezier(0.2, 0, 0, 1);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+            background: var(--bg-card-hover);
+        }
+        .card-img-wrap {
+            position: relative;
+            overflow: hidden;
+            background: #111a28;
+            aspect-ratio: 4/3;
+        }
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+        .card:hover .card-img {
+            transform: scale(1.03);
+        }
+        .card-body {
+            padding: 16px 16px 14px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .card-title {
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #fff;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 44px;
+            margin-bottom: 6px;
+        }
+        .card-price {
+            font-weight: 800;
+            font-size: 18px;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+        .card-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: auto;
+        }
+        .card-actions button {
+            flex: 1;
+            min-width: 60px;
+            padding: 8px 0;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 12px;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            background: #1a2335;
+            color: var(--text-light);
+            border: 1px solid var(--border-color);
+        }
+        .card-actions .btn-add {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+        .card-actions .btn-add:hover {
+            background: #7c7ff5;
+            box-shadow: 0 0 16px var(--primary-glow);
+        }
+        .card-actions .btn-buy {
+            background: #f59e0b;
+            color: #0b0f1a;
+            border-color: #f59e0b;
+        }
+        .card-actions .btn-buy:hover {
+            background: #fbbf24;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-box {
+            background: #141c2b;
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 28px 30px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+            animation: modalPop 0.3s ease;
+        }
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.95) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .modal-close {
+            position: sticky;
+            top: 0;
+            float: right;
+            font-size: 28px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: 0.2s;
+            background: none;
+            border: none;
+            z-index: 10;
+        }
+        .modal-close:hover {
+            color: #fff;
+            transform: rotate(90deg);
+        }
+        .modal-detail {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            margin-top: 8px;
+        }
+        .modal-detail .modal-img {
+            flex: 1.2;
+            max-width: 400px;
+            aspect-ratio: 4/3;
+        }
+        .modal-detail .modal-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            background: #0b0f1a;
+        }
+        .modal-detail .modal-info {
+            flex: 1.4;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .modal-detail .modal-info .modal-title {
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+        .modal-detail .modal-info .modal-price {
+            font-size: 28px;
+            font-weight: 800;
+            color: #fbbf24;
+        }
+        .modal-detail .modal-info .modal-desc {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 6px 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .modal-detail .modal-info .modal-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 10px 0 4px;
+        }
+        .modal-detail .modal-info .modal-actions button {
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .modal-detail .modal-info .modal-actions .btn-add-modal {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 4px 16px var(--primary-glow);
+        }
+        .modal-detail .modal-info .modal-actions .btn-buy-modal {
+            background: #f59e0b;
+            color: #0b0f1a;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
+        }
+        .modal-detail .modal-info .modal-actions button:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+        .related-section {
+            margin-top: 28px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+        .related-section h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+        }
+        .related-item {
+            background: #0b0f1a;
+            border-radius: 12px;
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: center;
+        }
+        .related-item:hover {
+            border-color: var(--primary);
+            background: #1a2335;
+        }
+        .related-item img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .related-item p {
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 4px;
+            color: var(--text-light);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /* Bkash Modal */
+        .bkash-modal .modal-box {
+            max-width: 520px;
+        }
+        .bkash-box {
+            background: #0f1422;
+            border-radius: 16px;
+            padding: 16px 18px 14px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(226, 19, 110, 0.2);
+        }
+        .bkash-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .bkash-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #fff;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .bkash-logo.bkash {
+            background: #e2136e;
+        }
+        .bkash-logo.nagad {
+            background: #f5a623;
+        }
+        .bkash-header-text {
+            font-weight: 700;
+            font-size: 15px;
+            color: #fff;
+        }
+        .bkash-header-text small {
+            display: block;
+            font-weight: 400;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+        .bkash-number-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 10px 14px;
+            border: 1px solid rgba(226, 19, 110, 0.15);
+        }
+        .bkash-number-row .number {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+            font-family: 'Courier New', monospace;
+        }
+        .bkash-number-row .copy-btn {
+            background: rgba(226, 19, 110, 0.15);
+            border: 1px solid rgba(226, 19, 110, 0.25);
+            color: #fff;
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .bkash-number-row .copy-btn:hover {
+            background: rgba(226, 19, 110, 0.35);
+        }
+        .bkash-number-row .copy-btn.copied {
+            background: #22d3a7;
+            border-color: #22d3a7;
+            color: #0b0f1a;
+        }
+        .bkash-amount {
+            display: flex;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+            padding: 6px 14px;
+            margin-top: 8px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .bkash-amount .amt {
+            color: #fbbf24;
+            font-weight: 700;
+        }
+        .payment-methods {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .payment-method {
+            flex: 1;
+            background: #0b0f1a;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .payment-method.active {
+            border-color: #e2136e;
+            background: rgba(226, 19, 110, 0.1);
+            color: #fff;
+        }
+        .payment-method.active.nagad-method {
+            border-color: #f5a623;
+            background: rgba(245, 166, 35, 0.1);
+        }
+        .payment-method i {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+        .payment-method.bkash-method i { color: #e2136e; }
+        .payment-method.nagad-method i { color: #f5a623; }
+        .form-group {
+            margin-bottom: 14px;
+        }
+        .form-group input {
+            width: 100%;
+            background: #0b0f1a;
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+            transition: 0.2s;
+        }
+        .form-group input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-glow);
+        }
+        .submit-wa {
+            width: 100%;
+            background: #22d3a7;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            color: #0b0f1a;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.25s;
+        }
+        .submit-wa:hover {
+            background: #1cc998;
+            transform: scale(1.01);
+        }
+        .cart-modal .modal-box {
+            max-width: 540px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .cart-item .cart-item-title {
+            font-weight: 600;
+            flex: 1;
+        }
+        .cart-item .cart-item-price {
+            color: #fbbf24;
+            font-weight: 700;
+            margin: 0 12px;
+        }
+        .cart-item .cart-item-remove {
+            color: #ef4444;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.2s;
+            background: none;
+            border: none;
+        }
+        .cart-item .cart-item-remove:hover {
+            transform: scale(1.2);
+        }
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 800;
+            font-size: 20px;
+            padding: 16px 0 8px;
+            border-top: 2px solid var(--border-color);
+            margin-top: 8px;
+        }
+        .cart-empty {
+            color: var(--text-muted);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 16px;
+        }
+        .checkout-fields {
+            margin: 16px 0;
+            padding: 16px;
+            background: #0b0f1a;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        .checkout-fields .form-group {
+            margin-bottom: 10px;
+        }
+        .checkout-fields .form-group:last-child {
+            margin-bottom: 0;
+        }
+        .checkout-fields .form-group input {
+            background: #141c2b;
+        }
+        .profile-modal .modal-box {
+            max-width: 420px;
+        }
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 0;
+        }
+        .profile-info .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .profile-info .avatar input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .profile-info .profile-name {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .profile-field {
+            width: 100%;
+            background: #0b0f1a;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 10px 14px;
+            color: #fff;
+            font-size: 14px;
+            margin-top: 6px;
+            outline: none;
+        }
+        .profile-field:focus {
+            border-color: var(--primary);
+        }
+        .profile-field::placeholder {
+            color: var(--text-muted);
+        }
+        .profile-save-btn {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+        .profile-save-btn:hover {
+            background: #7c7ff5;
+        }
+        .profile-orders {
+            width: 100%;
+            margin-top: 12px;
+            background: #0b0f1a;
+            border-radius: 12px;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+        }
+        .profile-orders .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .profile-orders .order-item:last-child {
+            border-bottom: none;
+        }
+        .profile-orders .order-item .order-date {
+            color: var(--text-muted);
+        }
+        .support-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 1500;
+        }
+        .support-toggle {
+            width: 58px;
+            height: 58px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 26px;
+            cursor: pointer;
+            box-shadow: 0 6px 24px var(--primary-glow);
+            border: none;
+            transition: 0.3s;
+        }
+        .support-toggle:hover {
+            transform: scale(1.05);
+        }
+        .support-menu {
+            position: absolute;
+            bottom: 74px;
+            right: 0;
+            background: #141c2b;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 10px;
+            width: 190px;
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+        }
+        .support-menu.active {
+            display: flex;
+        }
+        .support-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+        .support-item:hover {
+            background: #1c2639;
+        }
+        .support-item.wa { color: #22d3a7; }
+        .support-item.ms { color: #60a5fa; }
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 14px 24px;
+            box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+            z-index: 3000;
+            transform: translateX(150%);
+            transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            max-width: 350px;
+        }
+        .notification.show {
+            transform: translateX(0);
+        }
+        .notification i {
+            color: var(--accent);
+            font-size: 20px;
+        }
+        @media (max-width: 768px) {
+            header { flex-wrap: nowrap; padding: 12px 4%; gap: 8px; }
+            .brand .icon { width: 36px; height: 36px; font-size: 16px; }
+            .brand h1 { font-size: 16px; }
+            .brand .sub { font-size: 8px; }
+            .search-box { padding: 6px 14px; min-width: 100px; }
+            .header-actions .cart-icon { font-size: 18px; }
+            .header-actions .profile-icon { font-size: 18px; }
+            .hero-inner { flex-direction: column; text-align: center; padding: 24px 18px; }
+            .hero-text h2 { font-size: 24px; }
+            .hero-text p { font-size: 13px; max-width: 100%; }
+            .hero-tag { font-size: 14px; padding: 6px 16px; }
+            .btn-explore-hero { padding: 12px 24px; font-size: 14px; }
+            .category-tab { font-size: 12px; padding: 6px 16px; }
+            .section-head h3 { font-size: 20px; }
+            .modal-detail { flex-direction: column; }
+            .modal-detail .modal-img { max-width: 100%; aspect-ratio: 4/3; }
+            .modal-detail .modal-img img { max-height: 260px; }
+            .modal-detail .modal-info .modal-title { font-size: 20px; }
+            .related-grid { grid-template-columns: repeat(2, 1fr); }
+            .support-float { bottom: 16px; right: 16px; }
+            .support-toggle { width: 48px; height: 48px; font-size: 20px; }
+            .payment-methods { flex-direction: column; }
+            .notification { top: 70px; right: 10px; left: 10px; max-width: 100%; }
+        }
+        @media (max-width: 480px) {
+            .card-img-wrap { aspect-ratio: 4/3; }
+            .card-title { font-size: 13px; min-height: 38px; }
+            .card-actions button { font-size: 10px; padding: 6px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <a href="#" class="brand">
+        <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div>
+            <h1>TTM <span>Shop</span></h1>
+            <span class="sub">Premium Software & Courses</span>
+        </div>
+    </a>
+    <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search products..." />
+    </div>
+    <div class="header-actions">
+        <div class="cart-icon" onclick="openCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge" id="cartCount">0</span>
+        </div>
+        <div class="profile-icon" onclick="openProfile()">
+            <i class="fa-regular fa-user"></i>
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <h2>🚀 <span>Premium</span> Software & Courses</h2>
+            <p>Exclusive collection of top-rated software and training materials. All at one place.</p>
+            <div class="hero-badge">
+                <span class="hero-tag"><i class="fa-regular fa-star"></i> BDT 99 / Each</span>
+                <button class="btn-explore-hero" onclick="document.getElementById('searchInput').focus()">
+                    <i class="fa-solid fa-magnifying-glass"></i> Explore
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CATEGORY TABS -->
+<div class="category-tabs" id="categoryTabs">
+    <span class="category-tab" data-cat="all"><i class="fa-solid fa-grid-2"></i> All</span>
+    <span class="category-tab active" data-cat="software"><i class="fa-solid fa-code"></i> Software</span>
+    <span class="category-tab" data-cat="course"><i class="fa-solid fa-book"></i> Courses</span>
+</div>
+
+<!-- SECTION HEAD -->
+<div class="section-head">
+    <h3><i class="fa-regular fa-sparkles"></i> Products</h3>
+    <span class="count-badge" id="productCount">Loading...</span>
+</div>
+
+<!-- GRID -->
+<div class="grid" id="productGrid"></div>
+
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="detailModal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeDetailModal()">&times;</button>
+        <div class="modal-detail" id="detailContent">
+            <div class="modal-img"><img id="detailImg" src="" alt="product" /></div>
+            <div class="modal-info">
+                <div class="modal-title" id="detailTitle">Product Title</div>
+                <div class="modal-price" id="detailPrice">BDT 99</div>
+                <div class="modal-desc" id="detailDesc">Description goes here.</div>
+                <div class="modal-actions">
+                    <button class="btn-add-modal" onclick="handleAddFromDetail()"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                    <button class="btn-buy-modal" onclick="handleBuyFromDetail()"><i class="fa-solid fa-bolt"></i> Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="related-section" id="relatedSection">
+            <h4><i class="fa-regular fa-compass"></i> Related Products</h4>
+            <div class="related-grid" id="relatedGrid"></div>
+        </div>
+    </div>
+</div>
+
+<!-- BKASH / BUY MODAL -->
+<div class="modal-overlay bkash-modal" id="bkashModal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeBkashModal()">&times;</button>
+        <h3>💳 Complete Purchase</h3>
+        <div style="margin: 6px 0 10px; font-weight:600; color:#fbbf24;" id="bkashProductName">Product Name</div>
+
+        <div class="payment-methods">
+            <div class="payment-method bkash-method active" data-method="bkash" onclick="selectPayment('bkash')">
+                <i class="fa-solid fa-mobile-screen-button"></i> bKash
+            </div>
+            <div class="payment-method nagad-method" data-method="nagad" onclick="selectPayment('nagad')">
+                <i class="fa-solid fa-mobile-screen"></i> Nagad
+            </div>
+        </div>
+
+        <div class="bkash-box" id="paymentBox">
+            <div class="bkash-header">
+                <div class="bkash-logo bkash" id="paymentLogo"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <div class="bkash-header-text">
+                    <span id="paymentTitle">bKash Send Money</span>
+                    <small id="paymentSub">নিচের নাম্বারে <span id="bkashAmountDisplay">99</span> টাকা পাঠান</small>
+                </div>
+            </div>
+            <div class="bkash-number-row">
+                <span class="number" id="bkashNumberDisplay">01996-360822</span>
+                <button class="copy-btn" id="copyBkashBtn" onclick="copyBkashNumber()">
+                    <i class="fa-regular fa-copy"></i> কপি
+                </button>
+            </div>
+            <div class="bkash-amount">
+                <span><i class="fa-regular fa-circle-check" style="color: var(--accent);"></i> Amount</span>
+                <span class="amt" id="bkashAmountValue">99 টাকা</span>
+            </div>
+        </div>
+
+        <form onsubmit="handleBkashSubmit(event)">
+            <div class="form-group">
+                <input type="text" id="bkashName" placeholder="আপনার পুরো নাম" required />
+            </div>
+            <div class="form-group">
+                <input type="tel" id="bkashPhone" placeholder="আপনার মোবাইল নম্বর" required />
+            </div>
+            <div class="form-group">
+                <input type="text" id="bkashTransaction" placeholder="Transaction ID" required />
+            </div>
+            <button type="submit" class="submit-wa">
+                <i class="fa-brands fa-whatsapp"></i> Submit via WhatsApp
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- CART MODAL -->
+<div class="modal-overlay cart-modal" id="cartModal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeCart()">&times;</button>
+        <h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3>
+        <div id="cartItems"></div>
+        
+        <div class="payment-methods" style="margin: 16px 0 12px;">
+            <div class="payment-method bkash-method active" data-method="bkash" onclick="selectCartPayment('bkash')">
+                <i class="fa-solid fa-mobile-screen-button"></i> bKash
+            </div>
+            <div class="payment-method nagad-method" data-method="nagad" onclick="selectCartPayment('nagad')">
+                <i class="fa-solid fa-mobile-screen"></i> Nagad
+            </div>
+        </div>
+
+        <div class="bkash-box" style="margin-bottom:12px;" id="cartPaymentBox">
+            <div class="bkash-header">
+                <div class="bkash-logo bkash" id="cartPaymentLogo"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <div class="bkash-header-text">
+                    <span id="cartPaymentTitle">bKash Send Money</span>
+                    <small id="cartPaymentSub">নিচের নাম্বারে <span id="cartAmountDisplay">99</span> টাকা পাঠান</small>
+                </div>
+            </div>
+            <div class="bkash-number-row">
+                <span class="number" id="cartNumberDisplay">01996-360822</span>
+                <button class="copy-btn" id="cartCopyBtn" onclick="copyCartNumber()">
+                    <i class="fa-regular fa-copy"></i> কপি
+                </button>
+            </div>
+            <div class="bkash-amount">
+                <span><i class="fa-regular fa-circle-check" style="color: var(--accent);"></i> Amount</span>
+                <span class="amt" id="cartAmountValue">99 টাকা (প্রতি আইটেম)</span>
+            </div>
+        </div>
+
+        <div class="checkout-fields" id="checkoutFields">
+            <div class="form-group">
+                <input type="text" id="checkoutName" placeholder="আপনার পুরো নাম" />
+            </div>
+            <div class="form-group">
+                <input type="tel" id="checkoutPhone" placeholder="আপনার মোবাইল নম্বর" />
+            </div>
+            <div class="form-group">
+                <input type="text" id="checkoutTransaction" placeholder="Transaction ID" />
+            </div>
+        </div>
+
+        <div class="cart-total" id="cartTotal">Total: BDT 0</div>
+        <button class="submit-wa" style="margin-top:12px;" onclick="checkoutCart()">
+            <i class="fa-brands fa-whatsapp"></i> Checkout via WhatsApp
+        </button>
+    </div>
+</div>
+
+<!-- PROFILE MODAL -->
+<div class="modal-overlay profile-modal" id="profileModal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeProfile()">&times;</button>
+        <h3><i class="fa-regular fa-user"></i> My Profile</h3>
+        <div class="profile-info">
+            <div class="avatar" id="avatarContainer">
+                <i class="fa-regular fa-user" id="avatarIcon"></i>
+                <input type="file" id="avatarInput" accept="image/*" onchange="updateAvatar(event)" />
+            </div>
+            <input class="profile-field" id="profileName" placeholder="আপনার নাম" value="Guest User" />
+            <input class="profile-field" id="profilePhone" placeholder="মোবাইল নম্বর" value="" />
+            <input class="profile-field" id="profileAddress" placeholder="ঠিকানা" value="" />
+            <button class="profile-save-btn" onclick="saveProfile()"><i class="fa-regular fa-floppy-disk"></i> Save Profile</button>
+            <div class="profile-orders">
+                <strong>📦 My Orders</strong>
+                <div id="orderHistory" style="color:var(--text-muted); font-size:14px; margin-top:6px;">No orders yet.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- NOTIFICATION -->
+<div class="notification" id="notification">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="notificationText">Added to cart!</span>
+</div>
+
+<!-- SUPPORT FLOAT -->
+<div class="support-float">
+    <button class="support-toggle" onclick="toggleSupport()">
+        <i class="fa-solid fa-headset"></i>
+    </button>
+    <div class="support-menu" id="supportMenu">
+        <a href="#" id="waSupportLink" target="_blank" class="support-item wa">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="#" id="msSupportLink" target="_blank" class="support-item ms">
+            <i class="fa-brands fa-facebook-messenger"></i> Messenger
+        </a>
+    </div>
+</div>
+
+<script>
+    // ======= CONFIG =======
+    const WA_NUMBER = "8801571504384";
+    const MSGR_LINK = "https://m.me/1051901344679468";
+    const BKASH_NUMBER = "01996360822";
+    const NAGAD_NUMBER = "01996360822";
+
+    // ============================================================
+    // 📦 PRODUCTS — Easily edit title, price, image & description
+    // ============================================================
+    const allProducts = [
+        // ─── COURSES ──────────────────────────────────────────────
+        {
+            id: 1,
+            title: "Mayajaal full course Bangla",
+            category: "course",
+            price: 99,
+            image: "https://i.ytimg.com/vi/_aVsBvb4tzI/maxresdefault.jpg",
+            desc: "📚 Complete Mayajaal course in Bangla.\n🔥 Learn from scratch with practical examples.\n✅ Step-by-step tutorials."
+        },
+        {
+            id: 2,
+            title: "Gopal Bhar videos without Copyright",
+            category: "course",
+            price: 149,
+            image: "https://i.ytimg.com/vi/T5xzF_FxiOk/maxresdefault.jpg",
+            desc: "🎬 Copyright-free Gopal Bhar video collection.\n📺 Perfect for YouTube content creators.\n✅ Royalty-free content."
+        },
+        {
+            id: 3,
+            title: "Swapan Ahmed Video Editing Course",
+            category: "course",
+            price: 199,
+            image: "https://i.ytimg.com/vi/PX52Vf2CJPg/hqdefault.jpg",
+            desc: "🎥 Professional video editing course by Swapan Ahmed.\n✂️ Learn advanced editing techniques.\n🎯 Master Premiere Pro & After Effects."
+        },
+        {
+            id: 4,
+            title: "Digital Marketing Course",
+            category: "course",
+            price: 99,
+            image: "https://hopetechinstitute.com/wp-content/uploads/2025/11/digital-marketing-thumbnail.jpg",
+            desc: "📈 Complete digital marketing training.\n🔍 SEO, Social Media, Email Marketing & more.\n💰 Learn to grow any business online."
+        },
+        {
+            id: 5,
+            title: "YouTube Video Editing Course",
+            category: "course",
+            price: 149,
+            image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&q=80",
+            desc: "🎬 Master YouTube video editing.\n🛠️ Professional techniques for content creators.\n📈 Grow your YouTube channel."
+        },
+        {
+            id: 6,
+            title: "AI Islamic Youtube Channel",
+            category: "course",
+            price: 199,
+            image: "https://i.ytimg.com/vi/eVgkpNgSjRE/hq720.jpg",
+            desc: "🕌 Build an Islamic YouTube channel using AI tools.\n🤖 Generate content with automation.\n📊 Reach millions with AI-powered content."
+        },
+        {
+            id: 7,
+            title: "Faceless YouTube Profits Course",
+            category: "course",
+            price: 249,
+            image: "https://i.ytimg.com/vi/1MxdLZfizLQ/hq720.jpg",
+            desc: "💰 Earn with faceless YouTube channels.\n📈 Danny Why method - proven strategies.\n🚀 Start making money without showing your face."
+        },
+        {
+            id: 8,
+            title: "TikTok Automation Batch 19",
+            category: "course",
+            price: 99,
+            image: "https://i.ytimg.com/vi/-D6E6jbfCg0/hqdefault.jpg",
+            desc: "📱 TikTok automation mastery by Mohsin Ali.\n🚀 Grow your TikTok account organically.\n💸 Monetize your TikTok presence."
+        },
+        {
+            id: 9,
+            title: "Facebook Ads Batch #3 By Fawaz Ahmed",
+            category: "course",
+            price: 149,
+            image: "https://i.ytimg.com/vi/925oIe3ABng/hqdefault.jpg",
+            desc: "🎯 Advanced Facebook ads training.\n📊 Learn from Fawaz Ahmed's proven strategies.\n💰 Scale your business with Facebook Ads."
+        },
+        {
+            id: 10,
+            title: "Instagram Shiksha Masterclass",
+            category: "course",
+            price: 99,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4Q2wUUB0WOrlUGWQ-6Fjnpv8vK2t24Vr2a2RVYIZYBw&s",
+            desc: "📸 Instagram growth masterclass.\n📈 Build your brand and grow followers.\n🔥 Become an Instagram influencer."
+        },
+        {
+            id: 11,
+            title: "Fiverr Complete Course",
+            category: "course",
+            price: 199,
+            image: "https://karthyayan.skyupcampus.com/wp-content/uploads/2025/11/fiverr.png",
+            desc: "💼 Become a top-rated Fiverr freelancer.\n🚀 From zero to success on Fiverr.\n💵 Start earning as a freelancer."
+        },
+        {
+            id: 12,
+            title: "Cyber Security course",
+            category: "course",
+            price: 249,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwfeOBe0_G1dgvSAwfT4jMYOqD0sIwZTgPsBah-u_lBbSxJrYtyf-ige3H&s=10",
+            desc: "🛡️ Complete cyber security training.\n🔒 Protect yourself from online threats.\n💻 Learn ethical hacking & security."
+        },
+        {
+            id: 13,
+            title: "Capcut Video Editing Course Bangla",
+            category: "course",
+            price: 99,
+            image: "https://www.fahimulkhan.com/wp-content/uploads/2024/11/Capcut-PC-Complete-Course-social-media-post-design.jpg",
+            desc: "🎬 Capcut video editing course in Bangla.\n✂️ Create professional videos with Capcut.\n📱 Edit videos like a pro."
+        },
+        {
+            id: 14,
+            title: "Adobe Photoshop Course for Beginners",
+            category: "course",
+            price: 149,
+            image: "https://i.ytimg.com/vi/qvQie2QP5Vg/maxresdefault.jpg",
+            desc: "🎨 Adobe Photoshop complete beginner course.\n🖼️ Learn photo editing from scratch.\n✨ Create stunning graphics."
+        },
+        {
+            id: 15,
+            title: "Full Stack Web Development",
+            category: "course",
+            price: 299,
+            image: "https://codemanbd.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-09-at-19.27.35-1024x534.jpg",
+            desc: "💻 Full stack web development with modern technologies.\n🌐 HTML, CSS, JavaScript, React, Node.js.\n🚀 Build complete web applications."
+        },
+        {
+            id: 16,
+            title: "Data Analyst Course After 12th",
+            category: "course",
+            price: 199,
+            image: "https://www.cromacampus.com/public/uploads/Blog/2024/01/week_3/Data-Analyst-Course-After-12th-An-Ultimate-Guide-for-Learners.jpg",
+            desc: "📊 Data analyst career guide and training.\n📈 Learn Excel, SQL, Python, and Power BI.\n💼 Start your career as a data analyst."
+        },
+
+        // ─── SOFTWARE ──────────────────────────────────────────────
+        {
+            id: 101,
+            title: "N8N Automation Pro Software",
+            category: "software",
+            price: 299,
+            image: "https://i.ytimg.com/vi/0tAnnZ0U0fA/maxresdefault.jpg",
+            desc: "⚡ Automate workflows with N8N pro version.\n🔗 Connect apps and automate tasks.\n🤖 Build powerful automation workflows."
+        },
+        {
+            id: 102,
+            title: "AI Marketing Toolkit Suite",
+            category: "software",
+            price: 249,
+            image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=600&q=80",
+            desc: "🤖 Complete AI marketing toolkit for agencies.\n📝 Content generation, SEO, and analytics.\n📈 Scale your marketing with AI."
+        },
+        {
+            id: 103,
+            title: "Kali Linux for Ethical Hackers",
+            category: "software",
+            price: 199,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUNuEDC4fv-ZRepGqjQVGFoU0ZRE26J0qDbDFN9g5aHkgFbhiLq_PqNbE&s=10",
+            desc: "🐧 Kali Linux pre-installed with hacking tools.\n🛡️ Learn ethical hacking and penetration testing.\n🔓 Master cybersecurity skills."
+        },
+        {
+            id: 104,
+            title: "Excel Power User Pro",
+            category: "software",
+            price: 99,
+            image: "https://i.ytimg.com/vi/x98qOYt_NCQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBOzte5fRSVJ7RimjT9tWIqKKwXNQ",
+            desc: "📊 Advanced Excel templates and automation tools.\n📈 Become an Excel power user.\n⚡ Master data analysis with Excel."
+        },
+        {
+            id: 105,
+            title: "Shopify SEO Checklist Pro",
+            category: "software",
+            price: 149,
+            image: "https://cdn.shopaccino.com/igmguru/products/shopify-training-1398930728395333m-82207963829014_l.webp?v=548",
+            desc: "🛒 SEO software for Shopify stores.\n📈 Optimize your store for better rankings.\n💰 Increase sales with SEO."
+        },
+        {
+            id: 106,
+            title: "AI Video Creator Studio",
+            category: "software",
+            price: 299,
+            image: "https://i.ytimg.com/vi/wOFDtUKxO8U/maxresdefault.jpg",
+            desc: "🎬 Create AI-generated videos with premium tools.\n🤖 Make professional videos in minutes.\n📽️ Generate viral content with AI."
+        },
+        {
+            id: 107,
+            title: "Facebook Ads Manager Pro",
+            category: "software",
+            price: 199,
+            image: "https://sumonsohrab.com/wp-content/uploads/2023/12/Full-Facebook-Ads-Course-for-Free.webp",
+            desc: "📊 Advanced Facebook ads management software.\n🎯 Manage and optimize ad campaigns.\n💰 Maximize ROI on Facebook Ads."
+        },
+        {
+            id: 108,
+            title: "Personal Brand X Growth Tool",
+            category: "software",
+            price: 249,
+            image: "https://i.ytimg.com/vi/kiVTc92Ez0k/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBBqWnPAfN30-sExeyYeuGELqn96Q",
+            desc: "🌟 Growth tool for personal branding.\n📈 Build your authority online.\n🚀 Become an influencer in your niche."
+        },
+        {
+            id: 109,
+            title: "E-commerce Automation Suite",
+            category: "software",
+            price: 299,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd9Ba1zOt8I_VDyVTUzeFoWsKsbsDYR3QHFxe0SQ_bBd275rg9unabOYw&s=10",
+            desc: "🛒 E-commerce automation for Daraz, Shopify, etc.\n📦 Automate product listings and order processing.\n⚡ Run your store automatically."
+        },
+        {
+            id: 110,
+            title: "Print on Demand Design Kit",
+            category: "software",
+            price: 99,
+            image: "https://img-c.udemycdn.com/course/480x270/2659450_20d2_3.jpg",
+            desc: "👕 T-shirt & POD design templates with AI.\n🎨 Create unique designs for print on demand.\n💰 Start your POD business today."
+        }
+    ];
+
+    let currentCategory = 'software';
+    let currentProduct = null;
+    let cart = [];
+    let selectedPayment = 'bkash';
+    let cartPayment = 'bkash';
+    let orderHistory = [];
+    let profileData = { name: 'Guest User', phone: '', address: '', avatar: null };
+    let notificationTimer = null;
+
+    // ======= NOTIFICATION =======
+    function showNotification(text) {
+        const el = document.getElementById('notification');
+        document.getElementById('notificationText').innerText = text;
+        el.classList.add('show');
+        clearTimeout(notificationTimer);
+        notificationTimer = setTimeout(() => {
+            el.classList.remove('show');
+        }, 2500);
+    }
+
+    // ======= RENDER =======
+    function renderProducts(list) {
+        const grid = document.getElementById('productGrid');
+        grid.innerHTML = '';
+        document.getElementById('productCount').innerText = list.length + ' Products';
+        list.forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-img-wrap" onclick="openDetail(${p.id})">
+                    <img class="card-img" src="${p.image}" alt="${p.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80'" />
+                </div>
+                <div class="card-body">
+                    <div class="card-title">${p.title}</div>
+                    <div class="card-price">BDT ${p.price}</div>
+                    <div class="card-actions">
+                        <button class="btn-add" onclick="event.stopPropagation(); addToCart(${p.id})"><i class="fa-solid fa-cart-plus"></i> Add</button>
+                        <button class="btn-buy" onclick="event.stopPropagation(); buyNow(${p.id})"><i class="fa-solid fa-bolt"></i> Buy</button>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function filterByCategory(cat) {
+        currentCategory = cat;
+        const filtered = cat === 'all' ? allProducts : allProducts.filter(p => p.category === cat);
+        renderProducts(filtered);
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.classList.toggle('active', tab.dataset.cat === cat);
+        });
+    }
+
+    // ======= SEARCH =======
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+        const q = e.target.value.toLowerCase().trim();
+        const list = currentCategory === 'all' ? allProducts : allProducts.filter(p => p.category === currentCategory);
+        const filtered = list.filter(p => p.title.toLowerCase().includes(q));
+        renderProducts(filtered);
+    });
+
+    // ======= DETAIL =======
+    function openDetail(id) {
+        const p = allProducts.find(item => item.id === id);
+        if (!p) return;
+        currentProduct = p;
+        document.getElementById('detailImg').src = p.image;
+        document.getElementById('detailTitle').innerText = p.title;
+        document.getElementById('detailPrice').innerHTML = `BDT ${p.price}`;
+        document.getElementById('detailDesc').innerText = p.desc || 'Premium quality product.';
+        const related = allProducts.filter(item => item.id !== p.id && item.category === p.category).slice(0, 6);
+        const grid = document.getElementById('relatedGrid');
+        grid.innerHTML = '';
+        related.forEach(r => {
+            const div = document.createElement('div');
+            div.className = 'related-item';
+            div.innerHTML = `<img src="${r.image}" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80'" /><p>${r.title}</p>`;
+            div.onclick = () => openDetail(r.id);
+            grid.appendChild(div);
+        });
+        document.getElementById('detailModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDetailModal() {
+        document.getElementById('detailModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function handleAddFromDetail() { if (currentProduct) addToCart(currentProduct.id); }
+    function handleBuyFromDetail() { if (currentProduct) buyNow(currentProduct.id); }
+
+    // ======= CART =======
+    function addToCart(id) {
+        const p = allProducts.find(item => item.id === id);
+        if (!p) return;
+        const existing = cart.find(item => item.id === id);
+        if (existing) { existing.qty = (existing.qty || 1) + 1; } 
+        else { cart.push({ ...p, qty: 1 }); }
+        updateCartUI();
+        showNotification(`✅ "${p.title}" added to cart!`);
+    }
+
+    function removeFromCart(id) {
+        cart = cart.filter(item => item.id !== id);
+        updateCartUI();
+        renderCartItems();
+    }
+
+    function updateCartUI() {
+        const count = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
+        document.getElementById('cartCount').innerText = count;
+    }
+
+    function openCart() {
+        renderCartItems();
+        selectCartPayment('bkash');
+        document.getElementById('cartModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCart() {
+        document.getElementById('cartModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function renderCartItems() {
+        const container = document.getElementById('cartItems');
+        const totalEl = document.getElementById('cartTotal');
+        if (cart.length === 0) {
+            container.innerHTML = '<div class="cart-empty">Your cart is empty.</div>';
+            totalEl.innerText = 'Total: BDT 0';
+            return;
+        }
+        let html = '', total = 0;
+        cart.forEach(item => {
+            const qty = item.qty || 1;
+            const price = item.price * qty;
+            total += price;
+            html += `
+                <div class="cart-item">
+                    <span class="cart-item-title">${item.title} (${qty})</span>
+                    <span class="cart-item-price">BDT ${price}</span>
+                    <button class="cart-item-remove" onclick="removeFromCart(${item.id})">&times;</button>
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+        totalEl.innerText = `Total: BDT ${total}`;
+    }
+
+    // ======= CART PAYMENT SELECTION =======
+    function selectCartPayment(method) {
+        cartPayment = method;
+        const container = document.getElementById('cartModal');
+        container.querySelectorAll('.payment-method').forEach(el => {
+            el.classList.toggle('active', el.dataset.method === method);
+        });
+        const logo = document.getElementById('cartPaymentLogo');
+        const title = document.getElementById('cartPaymentTitle');
+        const sub = document.getElementById('cartPaymentSub');
+        const numberDisplay = document.getElementById('cartNumberDisplay');
+        if (method === 'bkash') {
+            logo.className = 'bkash-logo bkash';
+            logo.innerHTML = '<i class="fa-solid fa-mobile-screen-button"></i>';
+            title.innerText = 'bKash Send Money';
+            sub.innerHTML = 'নিচের নাম্বারে <span id="cartAmountDisplay">99</span> টাকা পাঠান';
+            numberDisplay.innerText = BKASH_NUMBER;
+        } else {
+            logo.className = 'bkash-logo nagad';
+            logo.innerHTML = '<i class="fa-solid fa-mobile-screen"></i>';
+            title.innerText = 'Nagad Send Money';
+            sub.innerHTML = 'নিচের নাম্বারে <span id="cartAmountDisplay">99</span> টাকা পাঠান';
+            numberDisplay.innerText = NAGAD_NUMBER;
+        }
+        document.getElementById('cartAmountValue').innerHTML = '99 টাকা (প্রতি আইটেম)';
+        const btn = document.getElementById('cartCopyBtn');
+        btn.innerHTML = '<i class="fa-regular fa-copy"></i> কপি';
+        btn.classList.remove('copied');
+    }
+
+    function copyCartNumber() {
+        const num = document.getElementById('cartNumberDisplay').innerText;
+        const btn = document.getElementById('cartCopyBtn');
+        navigator.clipboard.writeText(num).then(() => {
+            btn.innerHTML = '<i class="fa-regular fa-check"></i> কপি!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i> কপি';
+                btn.classList.remove('copied');
+            }, 2000);
+        }).catch(() => {
+            const temp = document.createElement('input');
+            temp.value = num;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            btn.innerHTML = '<i class="fa-regular fa-check"></i> কপি!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i> কপি';
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+
+    function checkoutCart() {
+        if (cart.length === 0) { alert('Cart is empty!'); return; }
+        
+        const name = document.getElementById('checkoutName').value.trim();
+        const phone = document.getElementById('checkoutPhone').value.trim();
+        const transaction = document.getElementById('checkoutTransaction').value.trim();
+        const method = cartPayment === 'bkash' ? 'bKash' : 'Nagad';
+        
+        if (!name || !phone || !transaction) {
+            alert('দয়া করে নাম, মোবাইল নম্বর এবং Transaction ID দিন');
+            return;
+        }
+        if (transaction.length < 4) {
+            alert('সঠিক Transaction ID দিন');
+            return;
+        }
+
+        const items = cart.map(item => `${item.title} (${item.qty})`).join(', ');
+        const total = cart.reduce((sum, item) => sum + item.price * (item.qty || 1), 0);
+        const text = `Hi, I want to buy these items:%0A%0A${items}%0A%0A💳 Payment: ${method}%0A👤 Name: ${name}%0A📞 Mobile: ${phone}%0A🧾 Transaction ID: ${transaction}%0A💰 Total: ${total} BDT`;
+        
+        window.open(`https://wa.me/${WA_NUMBER}?text=${text}`, '_blank');
+        
+        cart.forEach(item => {
+            orderHistory.push({ 
+                product: item.title, 
+                date: new Date().toLocaleDateString(), 
+                amount: item.price * (item.qty || 1) 
+            });
+        });
+        updateOrderHistory();
+        
+        cart = [];
+        updateCartUI();
+        closeCart();
+        document.getElementById('checkoutName').value = '';
+        document.getElementById('checkoutPhone').value = '';
+        document.getElementById('checkoutTransaction').value = '';
+        showNotification('✅ Order placed successfully!');
+    }
+
+    // ======= BUY =======
+    function buyNow(id) {
+        const p = allProducts.find(item => item.id === id);
+        if (!p) return;
+        document.getElementById('bkashProductName').innerText = p.title;
+        document.getElementById('bkashModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+        selectPayment('bkash', p.price);
+    }
+
+    function closeBkashModal() {
+        document.getElementById('bkashModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // ======= PAYMENT =======
+    function selectPayment(method, price) {
+        selectedPayment = method;
+        const amt = price || 99;
+        document.querySelectorAll('#bkashModal .payment-method').forEach(el => {
+            el.classList.toggle('active', el.dataset.method === method);
+        });
+        const logo = document.getElementById('paymentLogo');
+        const title = document.getElementById('paymentTitle');
+        const sub = document.getElementById('paymentSub');
+        const numberDisplay = document.getElementById('bkashNumberDisplay');
+        if (method === 'bkash') {
+            logo.className = 'bkash-logo bkash';
+            logo.innerHTML = '<i class="fa-solid fa-mobile-screen-button"></i>';
+            title.innerText = 'bKash Send Money';
+            sub.innerHTML = 'নিচের নাম্বারে <span id="bkashAmountDisplay">'+amt+'</span> টাকা পাঠান';
+            numberDisplay.innerText = BKASH_NUMBER;
+        } else {
+            logo.className = 'bkash-logo nagad';
+            logo.innerHTML = '<i class="fa-solid fa-mobile-screen"></i>';
+            title.innerText = 'Nagad Send Money';
+            sub.innerHTML = 'নিচের নাম্বারে <span id="bkashAmountDisplay">'+amt+'</span> টাকা পাঠান';
+            numberDisplay.innerText = NAGAD_NUMBER;
+        }
+        document.getElementById('bkashAmountValue').innerText = amt + ' টাকা';
+        const btn = document.getElementById('copyBkashBtn');
+        btn.innerHTML = '<i class="fa-regular fa-copy"></i> কপি';
+        btn.classList.remove('copied');
+    }
+
+    function copyBkashNumber() {
+        const num = document.getElementById('bkashNumberDisplay').innerText;
+        const btn = document.getElementById('copyBkashBtn');
+        navigator.clipboard.writeText(num).then(() => {
+            btn.innerHTML = '<i class="fa-regular fa-check"></i> কপি!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i> কপি';
+                btn.classList.remove('copied');
+            }, 2000);
+        }).catch(() => {
+            const temp = document.createElement('input');
+            temp.value = num;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            btn.innerHTML = '<i class="fa-regular fa-check"></i> কপি!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i> কপি';
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+
+    // ======= BKASH FORM =======
+    function handleBkashSubmit(e) {
+        e.preventDefault();
+        const name = document.getElementById('bkashName').value.trim();
+        const phone = document.getElementById('bkashPhone').value.trim();
+        const transaction = document.getElementById('bkashTransaction').value.trim();
+        const product = document.getElementById('bkashProductName').innerText;
+        const method = selectedPayment === 'bkash' ? 'bKash' : 'Nagad';
+        const price = parseInt(document.getElementById('bkashAmountDisplay').innerText) || 99;
+
+        if (!name || !phone || !transaction) { alert('দয়া করে সব তথ্য পূরণ করুন'); return; }
+        if (transaction.length < 4) { alert('সঠিক Transaction ID দিন'); return; }
+
+        const text = `Hi, I want to buy!%0A%0A📦 Product: ${product}%0A💳 Payment: ${method}%0A👤 Name: ${name}%0A📞 Mobile: ${phone}%0A🧾 Transaction ID: ${transaction}%0A💰 Amount: ${price} BDT`;
+        window.open(`https://wa.me/${WA_NUMBER}?text=${text}`, '_blank');
+        
+        orderHistory.push({ product, date: new Date().toLocaleDateString(), amount: price });
+        updateOrderHistory();
+        
+        closeBkashModal();
+        document.getElementById('bkashName').value = '';
+        document.getElementById('bkashPhone').value = '';
+        document.getElementById('bkashTransaction').value = '';
+        showNotification('✅ Order placed successfully!');
+    }
+
+    // ======= PROFILE =======
+    function openProfile() {
+        document.getElementById('profileName').value = profileData.name || 'Guest User';
+        document.getElementById('profilePhone').value = profileData.phone || '';
+        document.getElementById('profileAddress').value = profileData.address || '';
+        if (profileData.avatar) {
+            document.getElementById('avatarIcon').style.display = 'none';
+            document.getElementById('avatarContainer').style.backgroundImage = `url(${profileData.avatar})`;
+            document.getElementById('avatarContainer').style.backgroundSize = 'cover';
+            document.getElementById('avatarContainer').style.backgroundPosition = 'center';
+        }
+        updateOrderHistory();
+        document.getElementById('profileModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeProfile() {
+        document.getElementById('profileModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function updateAvatar(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                profileData.avatar = event.target.result;
+                document.getElementById('avatarIcon').style.display = 'none';
+                document.getElementById('avatarContainer').style.backgroundImage = `url(${event.target.result})`;
+                document.getElementById('avatarContainer').style.backgroundSize = 'cover';
+                document.getElementById('avatarContainer').style.backgroundPosition = 'center';
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function saveProfile() {
+        profileData.name = document.getElementById('profileName').value.trim() || 'Guest User';
+        profileData.phone = document.getElementById('profilePhone').value.trim();
+        profileData.address = document.getElementById('profileAddress').value.trim();
+        showNotification('✅ Profile saved successfully!');
+    }
+
+    function updateOrderHistory() {
+        const container = document.getElementById('orderHistory');
+        if (orderHistory.length === 0) {
+            container.innerHTML = 'No orders yet.';
+            return;
+        }
+        let html = '';
+        orderHistory.forEach((order, index) => {
+            html += `<div class="order-item"><span>${index+1}. ${order.product}</span><span class="order-date">${order.date} - BDT ${order.amount}</span></div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    // ======= SUPPORT =======
+    function toggleSupport() {
+        const menu = document.getElementById('supportMenu');
+        menu.classList.toggle('active');
+        document.getElementById('waSupportLink').href = `https://wa.me/${WA_NUMBER}`;
+        document.getElementById('msSupportLink').href = MSGR_LINK;
+    }
+
+    // ======= CATEGORY TABS =======
+    document.querySelectorAll('.category-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            filterByCategory(this.dataset.cat);
+        });
+    });
+
+    // ======= MODAL CLOSE =======
+    document.querySelectorAll('.modal-overlay').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.modal-overlay.active').forEach(m => {
+                m.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+    });
+
+    // ======= INIT =======
+    filterByCategory('software');
+</script>
+</body>
+</html>
