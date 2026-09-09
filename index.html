@@ -1843,9 +1843,71 @@
     const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwEvv3X53I8yJv77Uqe31lkSSGNvaMKTuvYbxX0QpKaHHTlFColoT8lYMX8X9PwoIjh/exec";
 
     // ============================================================
-    // 📦 PRODUCTS (সংক্ষিপ্ত)
+    // 📦 PRODUCTS (ক্যাটাগরি অনুযায়ী সাজানো)
     // ============================================================
     const allProducts = [
+        // ==================== SOFTWARE (সফটওয়্যার) ====================
+        {
+  id: 101,
+  title: "CapCut Pro Desktop With VIP License",
+  category: "software",
+  price: 990,
+  image: "https://nextgenlrs.com/assets/capcut-pro.webp",
+  desc: "✨ Premium Effects & Filters.\n🤖 AI Tools & Background Removal.\n📝 Auto Captions & Subtitles.\n🎨 Premium Templates, Fonts & Stickers.\n🎵 Premium Music & Sound Effects.\n🎥 Advanced Editing Tools.\n📤 High-Quality Video Export."
+},
+        {
+  id: 102,
+  title: "Windows & Office Activation",
+  category: "software",
+  price: 49,
+  image: "https://indemnizacionporlatigazocervical.es/wp-content/uploads/2021/07/utiliser-kmspico-1024x576.jpg",
+  desc: "🪟 Activate Windows with a genuine license.\n📊 Activate Microsoft Office applications.\n🔑 Secure and reliable license activation.\n💻 Compatible with supported Windows PCs.\n⚡ Easy activation process.\n🛡️ Official and legitimate software licensing."
+},
+        {
+  id: 103,
+  title: "Canva Pro Lifetime Access",
+  category: "software",
+  price: 90,
+  image: "https://res.cloudinary.com/dl9f32ham/image/upload/v1778247801/canva_sgpyxc.png",
+  desc: "🎨 Access Canva Pro premium design tools.\n✨ Premium templates, fonts, photos & graphics.\n🤖 AI-powered design features.\n🖼️ Background Remover & Magic Resize.\n📤 Create and export high-quality designs.\n💼 Perfect for social media, business & content creation."
+},
+        {
+  id: 104,
+  title: "IDM Lifetime License",
+  category: "software",
+  price: 49,
+  image: "https://gameloverbd.com/public/uploads/all/3dOZ1MhNcjMCFqihtVaBCc84isvDkPDhhxwV4tNd.webp",
+  desc: "⚡ High-speed file downloading.\n📥 Resume and manage interrupted downloads.\n🚀 Multi-part download acceleration.\n🎬 Download supported video and media files.\n🗂️ Easy download management and scheduling.\n🔑 Genuine lifetime license for supported versions."
+},
+        {
+  id: 105,
+  title: "Microsoft Visual C++ Redistributable Package",
+  category: "software",
+  price: 199,
+  image: "https://www.dr-farfar.com/wp-content/uploads/2026/07/Microsoft-Visual-C-Redistributable-Package-AIO-768x768.png",
+  desc: "🛠️ Install required Visual C++ runtime libraries.\n💻 Supports applications built with Microsoft Visual C++.\n⚙️ Helps fix missing DLL and runtime errors.\n🔄 Includes supported Visual C++ Redistributable versions.\n🚀 Easy installation for Windows systems.\n🛡️ Useful for running many Windows applications and games."
+},
+        {
+  id: 106,
+  title: "Google Maps Scraper Pro",
+  category: "software",
+  price: 89,
+  image: "https://www.dr-farfar.com/wp-content/uploads/2026/07/Google-Maps-Scraper-Pro-Full-Activated-768x768.png",
+  desc: "🗺️ Extract business data from Google Maps.\n🔍 Search businesses by keyword and location.\n📊 Collect business names, addresses, phone numbers & websites.\n📁 Export collected data for easy management.\n⚡ Automate Google Maps data collection.\n💼 Useful for lead generation, market research & business analysis."
+},
+        {
+  id: 107,
+  title: "4K Video Downloader Plus",
+  category: "software",
+  price: 19,
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNiCWcUP4jxulATawTQgC5bcC6rrXDk1rzzMqGXjD4JucODUlddHl7sWk&s=10",
+  desc: "🎬 Download videos in high quality.\n📺 Support for 4K and higher-resolution video where available.\n🎵 Extract audio from supported online videos.\n📥 Download playlists and channels with ease.\n⚡ Fast and convenient video downloading.\n💻 Simple interface for Windows, macOS & Linux."
+},
+        { id: 108, title: "Personal Brand X Growth Tool", category: "software", price: 249, image: "https://i.ytimg.com/vi/kiVTc92Ez0k/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBBqWnPAfN30-sExeyYeuGELqn96Q", desc: "🌟 Growth tool for personal branding.\n📈 Build your authority online.\n🚀 Become an influencer in your niche." },
+        { id: 109, title: "E-commerce Automation Suite", category: "software", price: 299, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd9Ba1zOt8I_VDyVTUzeFoWsKsbsDYR3QHFxe0SQ_bBd275rg9unabOYw&s=10", desc: "🛒 E-commerce automation for Daraz, Shopify, etc.\n📦 Automate product listings and order processing.\n⚡ Run your store automatically." },
+        { id: 110, title: "Print on Demand Design Kit", category: "software", price: 99, image: "https://img-c.udemycdn.com/course/480x270/2659450_20d2_3.jpg", desc: "👕 T-shirt & POD design templates with AI.\n🎨 Create unique designs for print on demand.\n💰 Start your POD business today." },
+
+        // ==================== COURSES (কোর্স) ====================
         { id: 1, title: "Mayajaal full course Bangla", category: "course", price: 99, image: "https://i.ytimg.com/vi/_aVsBvb4tzI/maxresdefault.jpg", desc: "📚 Complete Mayajaal course in Bangla.\n🔥 Learn from scratch with practical examples.\n✅ Step-by-step tutorials." },
         { id: 2, title: "Gopal Bhar videos without Copyright", category: "course", price: 149, image: "https://i.ytimg.com/vi/T5xzF_FxiOk/maxresdefault.jpg", desc: "🎬 Copyright-free Gopal Bhar video collection.\n📺 Perfect for YouTube content creators.\n✅ Royalty-free content." },
         { id: 3, title: "Swapan Ahmed Video Editing Course", category: "course", price: 199, image: "https://i.ytimg.com/vi/PX52Vf2CJPg/hqdefault.jpg", desc: "🎥 Professional video editing course by Swapan Ahmed.\n✂️ Learn advanced editing techniques.\n🎯 Master Premiere Pro & After Effects." },
@@ -1861,17 +1923,7 @@
         { id: 13, title: "Capcut Video Editing Course Bangla", category: "course", price: 99, image: "https://www.fahimulkhan.com/wp-content/uploads/2024/11/Capcut-PC-Complete-Course-social-media-post-design.jpg", desc: "🎬 Capcut video editing course in Bangla.\n✂️ Create professional videos with Capcut.\n📱 Edit videos like a pro." },
         { id: 14, title: "Adobe Photoshop Course for Beginners", category: "course", price: 149, image: "https://i.ytimg.com/vi/qvQie2QP5Vg/maxresdefault.jpg", desc: "🎨 Adobe Photoshop complete beginner course.\n🖼️ Learn photo editing from scratch.\n✨ Create stunning graphics." },
         { id: 15, title: "Full Stack Web Development", category: "course", price: 299, image: "https://codemanbd.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-09-at-19.27.35-1024x534.jpg", desc: "💻 Full stack web development with modern technologies.\n🌐 HTML, CSS, JavaScript, React, Node.js.\n🚀 Build complete web applications." },
-        { id: 16, title: "Data Analyst Course After 12th", category: "course", price: 199, image: "https://www.cromacampus.com/public/uploads/Blog/2024/01/week_3/Data-Analyst-Course-After-12th-An-Ultimate-Guide-for-Learners.jpg", desc: "📊 Data analyst career guide and training.\n📈 Learn Excel, SQL, Python, and Power BI.\n💼 Start your career as a data analyst." },
-        { id: 101, title: "N8N Automation Pro Software", category: "software", price: 299, image: "https://i.ytimg.com/vi/0tAnnZ0U0fA/maxresdefault.jpg", desc: "⚡ Automate workflows with N8N pro version.\n🔗 Connect apps and automate tasks.\n🤖 Build powerful automation workflows." },
-        { id: 102, title: "AI Marketing Toolkit Suite", category: "software", price: 249, image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=600&q=80", desc: "🤖 Complete AI marketing toolkit for agencies.\n📝 Content generation, SEO, and analytics.\n📈 Scale your marketing with AI." },
-        { id: 103, title: "Kali Linux for Ethical Hackers", category: "software", price: 199, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUNuEDC4fv-ZRepGqjQVGFoU0ZRE26J0qDbDFN9g5aHkgFbhiLq_PqNbE&s=10", desc: "🐧 Kali Linux pre-installed with hacking tools.\n🛡️ Learn ethical hacking and penetration testing.\n🔓 Master cybersecurity skills." },
-        { id: 104, title: "Excel Power User Pro", category: "software", price: 99, image: "https://i.ytimg.com/vi/x98qOYt_NCQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBOzte5fRSVJ7RimjT9tWIqKKwXNQ", desc: "📊 Advanced Excel templates and automation tools.\n📈 Become an Excel power user.\n⚡ Master data analysis with Excel." },
-        { id: 105, title: "Shopify SEO Checklist Pro", category: "software", price: 149, image: "https://cdn.shopaccino.com/igmguru/products/shopify-training-1398930728395333m-07982263829014_l.webp?v=548", desc: "🛒 SEO software for Shopify stores.\n📈 Optimize your store for better rankings.\n💰 Increase sales with SEO." },
-        { id: 106, title: "AI Video Creator Studio", category: "software", price: 299, image: "https://i.ytimg.com/vi/wOFDtUKxO8U/maxresdefault.jpg", desc: "🎬 Create AI-generated videos with premium tools.\n🤖 Make professional videos in minutes.\n📽️ Generate viral content with AI." },
-        { id: 107, title: "Facebook Ads Manager Pro", category: "software", price: 199, image: "https://sumonsohrab.com/wp-content/uploads/2023/12/Full-Facebook-Ads-Course-for-Free.webp", desc: "📊 Advanced Facebook ads management software.\n🎯 Manage and optimize ad campaigns.\n💰 Maximize ROI on Facebook Ads." },
-        { id: 108, title: "Personal Brand X Growth Tool", category: "software", price: 249, image: "https://i.ytimg.com/vi/kiVTc92Ez0k/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBBqWnPAfN30-sExeyYeuGELqn96Q", desc: "🌟 Growth tool for personal branding.\n📈 Build your authority online.\n🚀 Become an influencer in your niche." },
-        { id: 109, title: "E-commerce Automation Suite", category: "software", price: 299, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd9Ba1zOt8I_VDyVTUzeFoWsKsbsDYR3QHFxe0SQ_bBd275rg9unabOYw&s=10", desc: "🛒 E-commerce automation for Daraz, Shopify, etc.\n📦 Automate product listings and order processing.\n⚡ Run your store automatically." },
-        { id: 110, title: "Print on Demand Design Kit", category: "software", price: 99, image: "https://img-c.udemycdn.com/course/480x270/2659450_20d2_3.jpg", desc: "👕 T-shirt & POD design templates with AI.\n🎨 Create unique designs for print on demand.\n💰 Start your POD business today." }
+        { id: 16, title: "Data Analyst Course After 12th", category: "course", price: 199, image: "https://www.cromacampus.com/public/uploads/Blog/2024/01/week_3/Data-Analyst-Course-After-12th-An-Ultimate-Guide-for-Learners.jpg", desc: "📊 Data analyst career guide and training.\n📈 Learn Excel, SQL, Python, and Power BI.\n💼 Start your career as a data analyst." }
     ];
 
     // ============================================================
